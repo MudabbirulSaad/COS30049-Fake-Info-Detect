@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: aura-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: aura-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+networks:
+  default:
+    name: aura-network
+
