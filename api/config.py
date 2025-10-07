@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Model paths
 MODEL_DIR = BASE_DIR / "models"
-TUNED_MODEL_PATH = MODEL_DIR / "tuned_random_forest.joblib"
+TUNED_MODEL_PATH = MODEL_DIR / "best_model.joblib"
 TUNED_VECTORIZER_PATH = MODEL_DIR / "tuned_tfidf_vectorizer.joblib"
 MODEL_RESULTS_PATH = MODEL_DIR / "hyperparameter_tuning_results.json"
 
