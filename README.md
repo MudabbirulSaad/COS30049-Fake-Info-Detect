@@ -13,7 +13,7 @@ Aura is an end-to-end academic prototype for classifying article text using a re
 | **Product surface** | FastAPI prediction API, Vue analysis workflow, and containerised local runtime. |
 | **Evidence** | Stored quality, baseline-evaluation, and tuning reports under `output/` and `models/`. |
 | **Status** | Completed academic prototype; not a production fact-checking service. |
-| **Validation** | No dedicated automated test suite yet. Reproduce evaluation with `python run_model_evaluation.py`; validate the UI with `npm --prefix frontend run build`. |
+| **Validation** | No dedicated automated test suite yet. Reproduce the baseline with `python run_model_evaluation.py`; reproduce the reported tuned result with `python run_hyperparameter_tuning.py`; validate the UI with `npm --prefix frontend run build`. |
 
 The reported metrics come from the repository's saved test-split evaluation artifacts, particularly [`models/hyperparameter_tuning_results.json`](models/hyperparameter_tuning_results.json). Aura is a text-pattern classifier, not an automated fact-checking authority; predictions should be treated as decision support and reviewed alongside source evidence.
 
