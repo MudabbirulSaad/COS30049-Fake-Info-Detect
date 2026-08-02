@@ -2,11 +2,22 @@
 
 ## Project Overview
 
-The Aura Misinformation Detection System is a comprehensive machine learning solution for automated misinformation detection. This repository contains the complete pipeline including dataset preparation, model training and evaluation, hyperparameter tuning, a production-ready FastAPI backend, and a Vue.js web application. The system achieves 90.70% accuracy on the test set, exceeding the target threshold of 85%. The application is fully containerised using Docker for easy deployment across different platforms.
+Aura is an end-to-end academic prototype for classifying article text using a reproducible machine-learning pipeline. The repository covers dataset preparation, model comparison, hyperparameter tuning, FastAPI inference, a Vue interface, and Docker-based local deployment.
+
+## At a Glance
+
+| | |
+| --- | --- |
+| **Dataset** | 50,648 processed records assembled from the LIAR and ISOT datasets. |
+| **Selected model** | Tuned Random Forest with 90.70% test accuracy and 90.68% weighted F1. |
+| **Product surface** | FastAPI prediction API, Vue analysis workflow, and containerised local runtime. |
+| **Evidence** | Stored quality, baseline-evaluation, and tuning reports under `output/` and `models/`. |
+
+The reported metrics come from the repository's saved test-split evaluation artifacts, particularly [`models/hyperparameter_tuning_results.json`](models/hyperparameter_tuning_results.json). Aura is a text-pattern classifier, not an automated fact-checking authority; predictions should be treated as decision support and reviewed alongside source evidence.
 
 ## Quick Start
 
-**Docker Deployment (Recommended)**:
+**Docker (recommended)**:
 ```bash
 docker-compose build
 docker-compose up -d
@@ -24,6 +35,14 @@ cd frontend
 npm run dev
 # Access at http://localhost:5173
 ```
+
+## What the Demonstration Shows
+
+- A repeatable preparation pipeline with explicit data-quality reporting.
+- Comparable baseline models selected by F1 score rather than a single accuracy claim.
+- A tuned model served behind typed request and response schemas.
+- A browser workflow for submitting text and interpreting the model result.
+- Docker configuration that connects the UI and API for a reproducible local review.
 
 ## Repository Structure
 
