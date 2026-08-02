@@ -12,6 +12,8 @@ Aura is an end-to-end academic prototype for classifying article text using a re
 | **Selected model** | Tuned Random Forest with 90.70% test accuracy and 90.68% weighted F1. |
 | **Product surface** | FastAPI prediction API, Vue analysis workflow, and containerised local runtime. |
 | **Evidence** | Stored quality, baseline-evaluation, and tuning reports under `output/` and `models/`. |
+| **Status** | Completed academic prototype; not a production fact-checking service. |
+| **Validation** | No dedicated automated test suite yet. Reproduce evaluation with `python run_model_evaluation.py`; validate the UI with `npm --prefix frontend run build`. |
 
 The reported metrics come from the repository's saved test-split evaluation artifacts, particularly [`models/hyperparameter_tuning_results.json`](models/hyperparameter_tuning_results.json). Aura is a text-pattern classifier, not an automated fact-checking authority; predictions should be treated as decision support and reviewed alongside source evidence.
 
@@ -304,7 +306,7 @@ The tuning pipeline performs the following operations:
 - **Achieved Performance**: 90.68% F1-Score (Tuned Random Forest)
 - Current Pipeline Status: Complete dataset preparation, model evaluation, and hyperparameter optimization
 - Supported Model Types: Optimized Random Forest with TF-IDF features
-- **Status**: Production-ready optimized model available for deployment
+- **Status**: Evaluated prototype model available for local demonstration
 
 ## Technical Implementation
 
@@ -555,7 +557,7 @@ The web application provides a user-friendly interface for misinformation detect
 - **Inference Speed**: ~16ms average prediction time
 - **Training Samples**: 50,648 articles from LIAR and ISOT datasets
 - **Feature Space**: 10,000 TF-IDF features
-- **Deployment Ready**: Production-optimized artifacts available in models/
+- **Saved Artifacts**: Evaluated model artifacts are available under `models/`
 
 ## Project Structure
 
